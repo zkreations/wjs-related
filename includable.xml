@@ -1,0 +1,109 @@
+    <b:includable id='post-related' data='post'>
+	<div class='post-related'/>
+	<script>//<![CDATA[
+	/*!	wjs-related v1.0.0 | José Gregorio fb.com/JGMateran (zkreations team) | Licensed under MIT | github.com/zkreations/wjs-related/blob/master/LICENSE*/
+		'use strict';
+		var defaults = {
+			'container':document.querySelector('.post-related'),
+			'results':5,
+			'size':'s280-c',
+			'snippetLength':100,
+			'image':'image_por_defecto',//]]>
+			'postId':'<data:post.id/>',
+			'homepageUrl':'<data:blog.homepageUrl/>',
+			'labels':[<b:loop values='data:post.labels' var='label'>'<data:label.name />',</b:loop>]
+		};
+		//<![CDATA[
+		var methods = {
+			'labels':function(value){
+				var item, i = 0,
+					length = value.length;
+				var string = 'q=';
+				for (; i < length; i++){
+					string += 'label:"' + value[i] + (i + 1 !== length ? '"%7C' : '"');
+				}
+				return string;
+			}
+		};
+		function forEach(items,callback){
+			var i = 0,
+				length = items.length;
+			for (; i < length; i++){
+				if (callback.call(items[i],i,items[i])){
+					break;
+				}
+			}
+		}
+		function createScript(url,data){
+			var name, value, method,
+				script = document.createElement('script'),
+				src = url + '?alt=json-in-script';
+
+			for (name in data){
+				value = data[name];
+				method = methods[name];
+
+				src += '&' + (method ? method(value) : name + '=' + value);
+			}
+
+			script.src = src;
+			document.body.appendChild(script).parentNode.removeChild(script);
+			return src;
+		}
+		function render(data){
+			return [
+				'<div class="wjs-rel">'+
+					'<a href="' + data.url + '" class="wjs-rel__image">'+
+						'<img src="' + data.image + '" alt="' + data.title + '" />'+
+					'</a>'+
+					'<div class="wjs-rel__meta">'+
+						'<h3 class="wjs-rel__title">' + data.title + '</h3>'+
+						'<time class="wjs-rel__date">' + data.published + '</time>'+
+						'<p class="wjs-rel__snippet">' + data.snippet + '</p>'+
+					'</div>'+
+				'</div>'
+			].join('');
+		}
+		function related(json){
+			forEach(json.feed.entry,function(index,entry){
+				var postId = entry.id.$t.split('.post-')[1],
+					description = entry.content.$t.replace(/<[^>]*>?/g,''),
+					image = entry.media$thumbnail;
+				if (postId !== defaults.postId){
+					defaults.container.innerHTML += render({
+						id:postId,
+						snippet:( description.substring(0,defaults.snippetLength) + '...' ),
+						title:entry.title.$t,
+						image:( image ? image.url : defaults.image ).replace('s72-c',defaults.size),
+						published:new Date(entry.published.$t).toLocaleDateString("es-ES",{
+							year:'numeric',
+							month:'long',
+							day: 'numeric'
+						}),
+						description:description,
+						category:entry.category,
+						url:(function(){
+							var i = 0, link,
+								links = entry.link,
+								length = links.length;
+
+							for (; i < length; i++){
+								link = links[i];
+
+								if (link.rel === 'alternate'){
+									return link.href;
+								}
+							}
+
+						})()
+					});
+				}
+			});
+		}
+		createScript(defaults.homepageUrl + 'feeds/posts/default',{
+			'max-results':defaults.results + 1,
+			'callback':'related',
+			'labels':defaults.labels
+		});
+	//]]></script>
+    </b:includable>
