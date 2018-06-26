@@ -11,13 +11,13 @@
    'use strict';
 
    var defaults = {
-      id: '<data:post.id />',
-      homepage: '<data:blog.homepageUrl />',
+      id: '<data:post.id/>',
+      homepage: '<data:blog.homepageUrl.canonical/>',
       image: 'source/img/no-img-blogger.png',
       length: 5,
       snippet: 100,
       container: document.getElementById('wjs-related'),
-      tags: [<b:loop values='data:post.labels' var='label'>'<data:label.name />',</b:loop>]
+      tags: [<b:loop values='data:post.labels' var='label'>'<data:label.name/>',</b:loop>]
    };
 
    //<![CDATA[
