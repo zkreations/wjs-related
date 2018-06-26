@@ -41,7 +41,7 @@ var defaults = {
 
    var content = data.content.$t;
 
-   var snippet = content.replace(/<[^>]*>?/g,'').substring( 0, defaults.snippet );
+   var snippet = content.replace(/<[^>]*>?/g,'').substring( 0, defaults.snippet ) + '...';
 
    var img = data.media$thumbnail;
 
