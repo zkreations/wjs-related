@@ -3,7 +3,7 @@
 => Copyright 2018 José Gregorio | fb.com/JGMateran (zkreations team)
 => Licensed under MIT | github.com/zkreations/whale.css/blob/master/LICENSE
 */
-var wjs-related = (function(){
+var related = (function(){
  
 'use strict';
 
@@ -22,7 +22,7 @@ var defaults = {
 
    var src = defaults.homepage + '/feeds/posts/default' +
    '?alt=json-in-script' +
-   '&callback=wjs-related' +
+   '&callback=related' +
    '&max-results=' + ( defaults.length + 1 ) +
    '&q=';
 
@@ -85,7 +85,7 @@ var defaults = {
    );
    }
 
-   function wjs-related( json ){
+   function related( json ){
    var i = 0;
    var post;
    var length = defaults.length;
@@ -99,6 +99,6 @@ var defaults = {
    }
    }
 
-   return wjs-related;
+   return related;
 
    })();
