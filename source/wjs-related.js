@@ -1,7 +1,7 @@
 /*!
 => wjs-related v2.0.0
 => Copyright 2018 José Gregorio | fb.com/JGMateran (zkreations team)
-=> Licensed under MIT | github.com/zkreations/whale.css/blob/master/LICENSE
+=> Licensed under MIT | github.com/zkreations/wjs-related/blob/master/LICENSE
 */
 var related = (function(){
  
