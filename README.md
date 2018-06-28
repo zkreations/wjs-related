@@ -28,12 +28,12 @@ Incluir todo el contenido de **includable.xml** dentro de un widget tipo "Blog",
 
 | Propiedad    | Tipo |  Valor | 
 | ------------ | ---- | ------------------------------------------ |
-| `id`         | number | Codigo unicode una entrada publicada en el blog |
+| `id`         | string | Código único de una entrada publicada en el blog |
 | `homepage`   | string | Enlace de la página principal. Debe corresponder al id del post |
 | `image`      | image | Url de la imagen por defecto. Se usa cuando no existen imágenes en el post |
 | `length`     | number | Cantidad de entradas relacionadas a mostrar |
 | `snippet`    | number | Cantidad de texto para el resumen |
-| `container`  | var | Contenedor |
+| `container`  | var | Id del Contenedor |
 | `tags`       | Object | Etiquetas de la entrada separadas por comas. Debe corresponder al id del post |
 
 ## Licencia
