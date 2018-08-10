@@ -1,5 +1,9 @@
 # changelog
 
+## v2.0.1
+
+- Solucionado error "Scripts no seguros" al cargar desde https
+
 ## v2.0.0
 
 - Optimización general

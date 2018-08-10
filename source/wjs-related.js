@@ -1,8 +1,9 @@
 /*!
-=> wjs-related v2.0.0
-=> Copyright 2018 José Gregorio | fb.com/JGMateran (zkreations team)
-=> Licensed under MIT | github.com/zkreations/wjs-related/blob/master/LICENSE
-*/
+ * wjs-related v2.0.0
+ * Copyright 2018 zkreations
+ * Developed by José Gregorio (fb.com/JGMateran)
+ * Licensed under MIT (github.com/zkreations/wjs-related/blob/master/LICENSE)
+ */
 var related = (function(){
  
 'use strict';

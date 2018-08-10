@@ -2,7 +2,7 @@
    <div id='wjs-related'/>
    <script>
    /*!
-   => wjs-related v2.0.0
+   => wjs-related v2.0.1
    => Copyright 2018 José Gregorio | fb.com/JGMateran (zkreations team)
    => Licensed under MIT | github.com/zkreations/wjs-related/blob/master/LICENSE
    */
@@ -12,7 +12,7 @@
 
    var defaults = {
       id: '<data:post.id/>',
-      homepage: '<data:blog.homepageUrl.canonical/>',
+      homepage: window.location.protocol + '//' + window.location.hostname,
       image: 'source/img/no-img-blogger.png',
       length: 5,
       snippet: 100,
