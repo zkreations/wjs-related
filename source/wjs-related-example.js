@@ -1,5 +1,5 @@
 /*!
- * wjs-related v2.0.0
+ * wjs-related v2.0.2
  * Copyright 2018 zkreations
  * Developed by José Gregorio (fb.com/JGMateran)
  * Licensed under MIT (github.com/zkreations/wjs-related/blob/master/LICENSE)
@@ -14,6 +14,7 @@ var defaults = {
    image: 'img/no-img-blogger.png', // Imagen por defecto
    length: 5, // Cantidad de entradas relacionadas a mostrar
    snippet: 100, // Cantidad texto para el resumen
+   imgSize: 's256-c', // Cantidad texto para el resumen
    container: document.getElementById('wjs-related'), // Selector
    tags: ['plantilla','blogger'] // Etiquetas de prueba
    };
@@ -52,7 +53,7 @@ var defaults = {
 
    var imgHtml = tempHtml.querySelector('img');
 
-   var image = ( img ? img.url : (imgHtml ? imgHtml.src : defaults.image)).replace( /s\B\d{2,4}/, 's256-c' ); 
+   var image = ( img ? img.url : (imgHtml ? imgHtml.src : defaults.image)).replace( /s\B\d{2,4}/, defaults.imgSize);
 
    var url = (function(){
       for ( var i = 0; i < data.link.length; i++ ){

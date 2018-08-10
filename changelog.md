@@ -1,8 +1,9 @@
 # changelog
 
-## v2.0.1
+## v2.0.2
 
 - Solucionado error "Scripts no seguros" al cargar desde https
+- Variable para configurar tamaño de imagenes
 
 ## v2.0.0
 

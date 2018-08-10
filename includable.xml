@@ -2,7 +2,7 @@
    <div id='wjs-related'/>
    <script>
    /*!
-    * wjs-related v2.0.0
+    * wjs-related v2.0.2
     * Copyright 2018 zkreations
     * Developed by José Gregorio (fb.com/JGMateran)
     * Licensed under MIT (github.com/zkreations/wjs-related/blob/master/LICENSE)
@@ -17,6 +17,7 @@
       image: 'source/img/no-img-blogger.png',
       length: 5,
       snippet: 100,
+      imgSize: 's256-c',
       container: document.getElementById('wjs-related'),
       tags: [<b:loop values='data:post.labels' var='label'>'<data:label.name/>',</b:loop>]
    };
@@ -47,7 +48,7 @@
       var tempHtml = document.createElement('div');
       tempHtml.innerHTML = content;
       var imgHtml = tempHtml.querySelector('img');
-      var image = ( img ? img.url : (imgHtml ? imgHtml.src : defaults.image)).replace( /s\B\d{2,4}/, 's256-c' ); 
+      var image = ( img ? img.url : (imgHtml ? imgHtml.src : defaults.image)).replace( /s\B\d{2,4}-c/, defaults.imgSize); 
       var url = (function(){
          for ( var i = 0; i < data.link.length; i++ ){
             var link = data.link[i];

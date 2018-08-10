@@ -33,6 +33,7 @@ Incluir todo el contenido de **includable.xml** dentro de un widget tipo "Blog",
 | `image`      | image | Url de la imagen por defecto. Se usa cuando no existen imágenes en el post |
 | `length`     | number | Cantidad de entradas relacionadas a mostrar |
 | `snippet`    | number | Cantidad de texto para el resumen |
+| `imgSize`    | string | Parametros para el tamaño de las imagenes |
 | `container`  | var | Id del Contenedor |
 | `tags`       | Object | Etiquetas de la entrada separadas por comas. Debe corresponder al id del post |
 
@@ -44,5 +45,5 @@ Incluir todo el contenido de **includable.xml** dentro de un widget tipo "Blog",
 [changelog-url]: changelog.md
 [license-img]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [license-url]: LICENSE
-[release-img]: https://img.shields.io/badge/release-v2.0.1-yellowgreen.svg?style=flat-square
-[release-url]: https://github.com/zkreations/wjs-related/releases/tag/v2.0.1
+[release-img]: https://img.shields.io/badge/release-v2.0.2-yellowgreen.svg?style=flat-square
+[release-url]: https://github.com/zkreations/wjs-related/releases/tag/v2.0.2
