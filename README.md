@@ -14,13 +14,13 @@ wjs-related es un complemento para Blogger que captura de manera óptima, entrad
 
 Incluir todo el contenido de **includable.xml** dentro de un widget tipo "Blog", posteriormente, utilizar la siguiente etiqueta para incrustar los post relacionados donde se desee:
 
-```html
+```xml
 <b:include name='post-related'/>
 ```
 
 **Tips:** Puedes evitar la carga de post relacionados dentro de la vista previa ya que no se requiere, para ello agregue una condición:
 
-```html
+```xml
 <b:include cond='!data:view.isPreview' name='post-related'/>
 ```
 
