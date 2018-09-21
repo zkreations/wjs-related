@@ -1,5 +1,9 @@
 # changelog
 
+## v2.0.3
+
+- Ahora si el feed completo no esta disponible, se usará el corto
+
 ## v2.0.2
 
 - Solucionado error "Scripts no seguros" al cargar desde https

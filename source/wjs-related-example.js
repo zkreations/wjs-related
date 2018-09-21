@@ -1,5 +1,5 @@
 /*!
- * wjs-related v2.0.2
+ * wjs-related v2.0.3
  * Copyright 2018 zkreations
  * Developed by José Gregorio (fb.com/JGMateran)
  * Licensed under MIT (github.com/zkreations/wjs-related/blob/master/LICENSE)
@@ -41,9 +41,11 @@ var defaults = {
 
    var title = data.title.$t;
 
-   var content = data.content.$t;
+   var content = data.content;
 
-   var snippet = content.replace(/<[^>]*>?/g,'').substring( 0, defaults.snippet ) + '...';
+   var summary = data.summary;
+
+   var snippet = ( content ? content.$t : summary.$t).replace(/<[^>]*>?/g,'').substring( 0, defaults.snippet ) + '...';
 
    var img = data.media$thumbnail;
 
