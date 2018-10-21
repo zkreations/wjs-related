@@ -2,7 +2,7 @@
    <div id='wjs-related'/>
    <script>
    /*!
-    * wjs-related v2.0.3
+    * wjs-related v2.0.4
     * Copyright 2018 zkreations
     * Developed by José Gregorio (fb.com/JGMateran)
     * Licensed under MIT (github.com/zkreations/wjs-related/blob/master/LICENSE)
@@ -47,7 +47,7 @@
       var snippet = ( content ? content.$t : summary.$t).replace(/<[^>]*>?/g,'').substring( 0, defaults.snippet ) + '...';
       var img = data.media$thumbnail;
       var tempHtml = document.createElement('div');
-      tempHtml.innerHTML = content;
+      tempHtml.innerHTML = content.$t;
       var imgHtml = tempHtml.querySelector('img');
       var image = ( img ? img.url : (imgHtml ? imgHtml.src : defaults.image)).replace( /s\B\d{2,4}-c/, defaults.imgSize); 
       var url = (function(){

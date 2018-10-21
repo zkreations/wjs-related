@@ -1,5 +1,9 @@
 # changelog
 
+## v2.0.4
+
+- Solución a las imágenes de los post relacionados no subidas a blogger
+
 ## v2.0.3
 
 - Ahora si el feed completo no esta disponible, se usará el corto

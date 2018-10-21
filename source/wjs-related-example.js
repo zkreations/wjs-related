@@ -1,5 +1,5 @@
 /*!
- * wjs-related v2.0.3
+ * wjs-related v2.0.4
  * Copyright 2018 zkreations
  * Developed by José Gregorio (fb.com/JGMateran)
  * Licensed under MIT (github.com/zkreations/wjs-related/blob/master/LICENSE)
@@ -51,7 +51,7 @@ var defaults = {
 
    var tempHtml = document.createElement('div');
 
-   tempHtml.innerHTML = content;
+   tempHtml.innerHTML = content.$t;
 
    var imgHtml = tempHtml.querySelector('img');
 
