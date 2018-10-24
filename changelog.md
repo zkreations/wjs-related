@@ -1,5 +1,9 @@
 # changelog
 
+## v2.0.6
+
+- Solución a error con imágenes no subidas a blogger, utilizando el feed corto
+
 ## v2.0.4
 
 - Solución a las imágenes de los post relacionados no subidas a blogger
