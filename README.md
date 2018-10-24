@@ -45,5 +45,5 @@ Incluir todo el contenido de **includable.xml** dentro de un widget tipo "Blog",
 [changelog-url]: changelog.md
 [license-img]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [license-url]: LICENSE
-[release-img]: https://img.shields.io/badge/release-v2.0.3-yellowgreen.svg?style=flat-square
-[release-url]: https://github.com/zkreations/wjs-related/releases/tag/v2.0.3
+[release-img]: https://img.shields.io/badge/release-v2.0.6-yellowgreen.svg?style=flat-square
+[release-url]: https://github.com/zkreations/wjs-related/releases/tag/v2.0.6
