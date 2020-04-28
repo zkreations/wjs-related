@@ -1,5 +1,5 @@
-<b:includable id='post-related' data='post'>
-   <div id='wjs-related'/>
+<b:includable id='postRelated' data='post'>
+   <div id='wjs-related' class='wjs-related'/>
    <script>
    /*!
     * wjs-related v2.0.6
@@ -8,38 +8,34 @@
     * Licensed under MIT (github.com/zkreations/wjs-related/blob/master/LICENSE)
     */
    var related = (function(){
-    
    'use strict';
-
+   
+   //Configuracion
    var defaults = {
       id: '<data:post.id/>',
       homepage: window.location.protocol + '//' + window.location.hostname,
-      image: 'source/img/no-img-blogger.png',
-      length: 5,
-      snippet: 100,
-      imgSize: 's256-c',
+      image: 'src/imgdefault.jpg', //Imagen por defecto
+      length: 6, //Cantidad de entradas
+      localeDate: 'es-ES', //Idioma
+      snippet: 50, //Cantidad de texto
+      imgSize: 's256', //Recorte de la imagen
       container: document.getElementById('wjs-related'),
       tags: [<b:loop values='data:post.labels' var='label'>'<data:label.name/>',</b:loop>]
    };
-
+   
    //<![CDATA[
    var tags$length = defaults.tags.length;
    var script = document.createElement( 'script' );
-
    var src = defaults.homepage + '/feeds/posts/default' +
       '?alt=json-in-script' +
       '&callback=related' +
       '&max-results=' + ( defaults.length + 1 ) +
       '&q=';
-
    for ( var n = 0; n < tags$length; n++ ){
       src += 'label:"' + defaults.tags[ n ] + '"' + ( n === tags$length - 1 ? '' : '|' );
    }
-   
    script.src = src;
-   
    document.body.appendChild( script );
-   
    function render( data ){
       var title = data.title.$t;
       var content = data.content;
@@ -60,22 +56,20 @@
          }
       })();
       var published = new Date( data.published.$t ).toLocaleDateString(
-         'es-ES',
-         {
-            year:'numeric',
-            month:'long',
-            day: 'numeric'
-         }
+         defaults.localeDate,
+         {year:'numeric', month:'long', day: 'numeric'}
       );
       return (
-         '<div class="wjs-rel">'+
-            '<a href="' + url + '" class="wjs-rel__image">'+
-               '<img src="' + image + '" alt="' + title + '" />'+
-            '</a>'+
-            '<div class="wjs-rel__data">'+
-               '<h3 class="wjs-rel__title">' + title + '</h3>'+
-               '<div class="wjs-rel__date">' + published + '</div>'+
-               '<p class="wjs-rel__snippet">' + snippet + '</p>'+
+         '<div class="relCard">'+
+            '<div class="relCard-content">'+
+               '<a href="' + url + '" class="relCard-image">'+
+                  '<img src="' + image + '" alt="' + title + '" />'+
+               '</a>'+
+               '<div class="relCard-data">'+
+                  '<h3 class="relCard-title">' + title + '</h3>'+
+                  '<div class="relCard-date">' + published + '</div>'+
+                  '<p class="relCard-snippet">' + snippet + '</p>'+
+               '</div>'+
             '</div>'+
          '</div>'
       );
@@ -84,7 +78,6 @@
       var i = 0;
       var post;
       var length = defaults.length;
-
       for ( ; i < length && ( post = json.feed.entry[ i ] ); i++ ){
          if ( defaults.id !== post.id.$t.split( '.post-' )[ 1 ] ){
             defaults.container.innerHTML += render( post );
@@ -94,6 +87,6 @@
       }
    }
    return related;
-   //]]>
-   })();</script>
+   })();
+//]]></script>
 </b:includable>
