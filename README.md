@@ -18,7 +18,7 @@ Incluir todo el contenido de **includable.xml** dentro de un widget tipo "Blog",
 <b:include name='postRelated'/>
 ```
 
-**Tips:** Puede evitar la carga de post relacionados dentro de la vista previa ya que no se requiere, para ello agregue una condición:
+**Consejo:** Puede evitar la carga de post relacionados dentro de la vista previa ya que no se requiere, para ello agregue una condición:
 
 ```xml
 <b:include cond='!data:view.isPreview' name='postRelated'/>
@@ -34,7 +34,7 @@ Incluir todo el contenido de **includable.xml** dentro de un widget tipo "Blog",
 | `length`     | number | Cantidad de entradas relacionadas a mostrar |
 | `localeDate`     | string | Idioma y localidad |
 | `snippet`    | number | Cantidad de texto para el resumen |
-| `imgSize`    | string | Parametros para el tamaño de las imagenes |
+| `imgSize`    | string | Parametros para cambiar el tamaño de las imágenes |
 | `container`  | var | Id del Contenedor |
 | `tags`       | Object | Etiquetas de la entrada separadas por comas. Debe corresponder al id del post |
 

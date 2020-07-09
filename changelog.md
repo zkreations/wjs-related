@@ -1,5 +1,9 @@
 # changelog
 
+## v2.1.0
+
+- Mejora en la expresión regular para cambiar los parametros de imagenes subidas a Blogger
+
 ## v2.0.6
 
 - Solución a error con imágenes no subidas a blogger, utilizando el feed corto
